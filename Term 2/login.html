@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Login</title>
+</head>
+<body>
+
+<h2>Login System</h2>
+
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+<button id="loginBtn">Login</button>
+
+<p id="result"></p>
+
+<script>
+    let btn = document.getElementById("loginBtn");
+    let result = document.getElementById("result");
+
+    btn.addEventListener("click", function() {
+
+        let user = document.getElementById("username").value;
+        let pass = document.getElementById("password").value;
+
+        let correctUser = user === "admin";
+        let correctPass = pass === "12345";
+        let isBlocked = false;
+
+        let loginSuccess = correctUser && correctPass && !isBlocked;
+
+        result.innerText = loginSuccess ? 
+            "Login Berhasil" : 
+            "Login Gagal";
+
+    });
+</script>
+</body>
+</html>
